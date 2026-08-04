@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Services - Brew Haven Cafe</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Brew Haven Cafe Services, Espresso Catering, Coffee Delivery, Roastery, Event Reservations, Corporate Coffee Bar" name="keywords">
+    <meta content="Explore the premium services offered by Brew Haven Cafe, including artisan delivery, micro-batch roasts, expert barista craft, and signature event catering." name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <meta name="theme-color" content="#33211D">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Custom Coffee Cursor -->
+    <link href="css/cursor.css" rel="stylesheet">
+
+    <!-- Unique Custom Premium Service Styles -->
+    <style>
+        /* Keyframe Animations */
+        @keyframes pulseBorder {
+            0% { box-shadow: 0 0 0 0 rgba(218, 159, 91, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(218, 159, 91, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(218, 159, 91, 0); }
+        }
+
+        @keyframes badgeFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* NEW SECTION 1: Luxury Catering & Event Packages */
+        .catering-sec {
+            background: linear-gradient(135deg, #1b1210 0%, #2b1a17 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catering-sec::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(218, 159, 91, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .catering-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(218, 159, 91, 0.25);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(8px);
+        }
+
+        .catering-card.featured-pkg {
+            background: rgba(218, 159, 91, 0.08);
+            border: 2px solid #da9f5b;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), 0 0 25px rgba(218, 159, 91, 0.25);
+            transform: scale(1.03);
+        }
+
+        .catering-card:hover {
+            transform: translateY(-12px);
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #da9f5b;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(218, 159, 91, 0.35);
+        }
+
+        .popular-tag {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #da9f5b, #b57a38);
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 5px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: badgeFloat 3s infinite ease-in-out;
+        }
+
+        .catering-price {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #da9f5b;
+            margin: 20px 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .catering-price span {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 400;
+        }
+
+        .catering-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 30px 0;
+        }
+
+        .catering-features li {
+            color: rgba(255, 255, 255, 0.85);
+            padding: 10px 0;
+            border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+        }
+
+        .catering-features li i {
+            color: #da9f5b;
+            margin-right: 10px;
+        }
+
+        /* NEW SECTION 2: Service Excellence & Stats */
+        .excellence-sec {
+            background: #fffbf7;
+        }
+
+        .excellence-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 35px 25px;
+            box-shadow: 0 10px 30px rgba(51, 33, 29, 0.06);
+            border-left: 4px solid transparent;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .excellence-card:hover {
+            transform: translateY(-8px);
+            border-left-color: #da9f5b;
+            box-shadow: 0 18px 40px rgba(51, 33, 29, 0.15);
+        }
+
+        .excellence-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 14px;
+            background: rgba(218, 159, 91, 0.12);
+            color: #da9f5b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .excellence-card:hover .excellence-icon {
+            background: #da9f5b;
+            color: #ffffff;
+            animation: pulseBorder 1.5s infinite;
+        }
+
+        .stat-counter-wrap {
+            background: linear-gradient(135deg, #33211d, #1b1210);
+            border-radius: 20px;
+            padding: 40px 20px;
+            color: #ffffff;
+            box-shadow: 0 15px 35px rgba(51, 33, 29, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #da9f5b;
+            line-height: 1;
+            margin-bottom: 8px;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0 d-flex align-items-center">
+                <i class="fa fa-coffee text-primary mr-2" style="font-size: 1.75rem;"></i>
+                <h2 class="m-0 font-weight-bold text-uppercase text-white" style="font-size: 1.6rem; letter-spacing: 2px;">BREW HAVEN</h2>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link active">Service</a>
+                    <a href="menu.html" class="nav-item nav-link">Menu</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu text-capitalize">
+                            <a href="reservation.html" class="dropdown-item">Reservation</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Services</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="index.html">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Services</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Our Services</h4>
+                <h1 class="display-4">Fresh & Organic Beans</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-1.jpg" alt="Artisan Express Delivery">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-truck service-icon"></i>Artisan Express Delivery</h4>
+                            <p class="m-0">Enjoy our signature espresso drinks, warm paninis, and fresh pastries delivered straight to your home or workspace at peak freshness.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-2.jpg" alt="Single-Origin Roast">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-coffee service-icon"></i>Single-Origin Roast</h4>
+                            <p class="m-0">We roast custom small-batch Arabica beans weekly to highlight rich notes of toasted hazelnut, dark cocoa, and subtle berries.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-3.jpg" alt="Master Barista Craft">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-award service-icon"></i>Master Barista Craft</h4>
+                            <p class="m-0">Our certified baristas craft flawless lattes, silky cappuccinos, and precision pour-overs dialed into absolute perfection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="row align-items-center">
+                        <div class="col-sm-5">
+                            <img class="img-fluid mb-3 mb-sm-0" src="img/service-4.jpg" alt="Online Table Booking">
+                        </div>
+                        <div class="col-sm-7">
+                            <h4><i class="fa fa-table service-icon"></i>Online Table Booking</h4>
+                            <p class="m-0">Book your favorite booth or quiet study nook online to enjoy effortless dining, meeting spaces, or afternoon relaxation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+    <!-- NEW UNIQUE PREMIUM SECTION 1: Signature Catering Packages Start -->
+    <div class="container-fluid py-5 catering-sec">
+        <div class="container py-4">
+            <div class="section-title text-center mb-5">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Event & Corporate Services</h4>
+                <h1 class="display-4 text-white">Signature Coffee Catering</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="catering-card">
+                        <div>
+                            <h3 class="text-white mb-1">Artisan Break</h3>
+                            <p class="text-white-50 small">Ideal for intimate team meetings & workshops</p>
+                            <div class="catering-price">$250 <span>/ event</span></div>
+                            <ul class="catering-features">
+                                <li><i class="fa fa-check-circle"></i>Serves up to 25 Guests</li>
+                                <li><i class="fa fa-check-circle"></i>Fresh Batch Brewed Arabica</li>
+                                <li><i class="fa fa-check-circle"></i>Assorted Morning Pastry Platter</li>
+                                <li><i class="fa fa-check-circle"></i>Eco-friendly Cups & Eco Supplies</li>
+                                <li><i class="fa fa-check-circle"></i>Free Local Setup & Delivery</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn btn-outline-primary btn-block font-weight-bold py-3 mt-3">Book Package</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="catering-card featured-pkg">
+                        <div class="popular-tag">Most Popular</div>
+                        <div>
+                            <h3 class="text-white mb-1">Roastery Experience</h3>
+                            <p class="text-white-50 small">Full mobile espresso bar for weddings & corporate events</p>
+                            <div class="catering-price">$550 <span>/ event</span></div>
+                            <ul class="catering-features">
+                                <li><i class="fa fa-check-circle"></i>Serves up to 75 Guests</li>
+                                <li><i class="fa fa-check-circle"></i>Dedicated Master Barista (2 Hours)</li>
+                                <li><i class="fa fa-check-circle"></i>Full Espresso Menu & Latte Art</li>
+                                <li><i class="fa fa-check-circle"></i>Gourmet Sandwiches & Pastry Tower</li>
+                                <li><i class="fa fa-check-circle"></i>Custom Signature Event Beverage</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn btn-primary btn-block font-weight-bold py-3 mt-3">Book Experience</a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="catering-card">
+                        <div>
+                            <h3 class="text-white mb-1">Grand Gala Luxe</h3>
+                            <p class="text-white-50 small">Ultimate VIP beverage service & luxury catering</p>
+                            <div class="catering-price">$950 <span>/ event</span></div>
+                            <ul class="catering-features">
+                                <li><i class="fa fa-check-circle"></i>Serves up to 150+ Guests</li>
+                                <li><i class="fa fa-check-circle"></i>2 Master Baristas + Service Staff</li>
+                                <li><i class="fa fa-check-circle"></i>Unlimited Espresso, Cold Brew & Nitro Tap</li>
+                                <li><i class="fa fa-check-circle"></i>Full Breakfast & Brunch Buffet Spread</li>
+                                <li><i class="fa fa-check-circle"></i>Personalized Coffee Bean Favors</li>
+                            </ul>
+                        </div>
+                        <a href="contact.html" class="btn btn-outline-primary btn-block font-weight-bold py-3 mt-3">Book Gala Luxe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEW UNIQUE PREMIUM SECTION 1: Signature Catering Packages End -->
+
+
+    <!-- NEW UNIQUE PREMIUM SECTION 2: Service Excellence & Stats Start -->
+    <div class="container-fluid py-5 excellence-sec">
+        <div class="container py-4">
+            <div class="section-title text-center mb-5">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Why Choose Us</h4>
+                <h1 class="display-4">Our Service Excellence</h1>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="excellence-card text-center">
+                        <div class="excellence-icon mx-auto">
+                            <i class="fa fa-leaf"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">100% Organic Beans</h4>
+                        <p class="text-muted m-0">Sourced exclusively from certified organic high-altitude estates with zero synthetic additives.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="excellence-card text-center">
+                        <div class="excellence-icon mx-auto">
+                            <i class="fa fa-shipping-fast"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">15-Min Express Delivery</h4>
+                        <p class="text-muted m-0">Thermal-sealed packaging ensures your beverage and warm breakfast arrive at exact roasting temperatures.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="excellence-card text-center">
+                        <div class="excellence-icon mx-auto">
+                            <i class="fa fa-user-shield"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">Certified Baristas</h4>
+                        <p class="text-muted m-0">Every barista undergoes 200+ hours of sensory training and extraction science certification.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="excellence-card text-center">
+                        <div class="excellence-icon mx-auto">
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <h4 class="mb-3 text-dark">Community First</h4>
+                        <p class="text-muted m-0">5% of every roast purchase goes directly back into local urban agriculture & youth barista programs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="stat-counter-wrap">
+                <div class="row text-center">
+                    <div class="col-md-3 col-6 mb-3 mb-md-0">
+                        <div class="stat-number">15+</div>
+                        <div class="text-white-50 text-uppercase small" style="letter-spacing: 2px;">Micro-Roast Origins</div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3 mb-md-0">
+                        <div class="stat-number">50K+</div>
+                        <div class="text-white-50 text-uppercase small" style="letter-spacing: 2px;">Cups Served Yearly</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-number">99.8%</div>
+                        <div class="text-white-50 text-uppercase small" style="letter-spacing: 2px;">Customer Satisfaction</div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="stat-number">12</div>
+                        <div class="text-white-50 text-uppercase small" style="letter-spacing: 2px;">Roasting Awards</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEW UNIQUE PREMIUM SECTION 2: Service Excellence & Stats End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Get In Touch</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>742 Evergreen Ave, Seattle, WA 98101</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+1 (555) 382-4283</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>contact@brewhavencafe.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+                <p>Follow Brew Haven Cafe on social media for daily roastery updates, seasonal menu reveals, and community gatherings.</p>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Open Hours</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Monday - Friday</h6>
+                    <p>6:30 AM - 9:00 PM</p>
+                    <h6 class="text-white text-uppercase">Saturday - Sunday</h6>
+                    <p>7:30 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Newsletter</h4>
+                <p>Subscribe for exclusive invitations to private coffee tastings, seasonal discounts, and fresh roasts.</p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Brew Haven Cafe</a>. All Rights Reserved.</p>
+            <p class="m-0 text-white">Crafted Coffee. Fresh Food. Memorable Moments.</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Custom Coffee Cursor -->
+    <script src="js/cursor.js"></script>
+</body>
+
+</html>

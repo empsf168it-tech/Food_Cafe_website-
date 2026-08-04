@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Menu & Pricing - Brew Haven Cafe</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Brew Haven Menu, Specialty Coffee Prices, Artisan Pastries, Breakfast Sandwich, Cold Brew, Latte, Desserts, Seasonal Specials, Tasting Flights" name="keywords">
+    <meta content="Explore Brew Haven Cafe's complete menu featuring handcrafted espresso, cold brew, organic teas, chef's seasonal specials, and curated coffee tasting flights." name="description">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <meta name="theme-color" content="#33211D">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Custom Coffee Cursor -->
+    <link href="css/cursor.css" rel="stylesheet">
+
+    <!-- Unique Custom Premium Menu Styles -->
+    <style>
+        /* Keyframe Animations */
+        @keyframes shineGlow {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(200%) rotate(45deg); }
+        }
+
+        @keyframes badgePulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(218, 159, 91, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 12px 4px rgba(218, 159, 91, 0.3); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(218, 159, 91, 0.4); }
+        }
+
+        /* NEW SECTION 1: Seasonal Specials Styles */
+        .specials-sec {
+            background: linear-gradient(135deg, #1b1210 0%, #2b1a17 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(218, 159, 91, 0.25);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(6px);
+        }
+
+        .special-card:hover {
+            transform: translateY(-10px);
+            border-color: #da9f5b;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 25px rgba(218, 159, 91, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .special-img-box {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .special-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .special-card:hover .special-img-box img {
+            transform: scale(1.1);
+        }
+
+        .special-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #da9f5b, #ba7f3b);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 14px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: badgePulse 3s infinite ease-in-out;
+        }
+
+        .special-body {
+            padding: 30px 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        .special-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #da9f5b;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* NEW SECTION 2: Tasting Flights & Combos Styles */
+        .flights-sec {
+            background: #fffbf7;
+        }
+
+        .flight-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(51, 33, 29, 0.08);
+            border: 1px solid rgba(218, 159, 91, 0.2);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .flight-card:hover {
+            transform: translateY(-10px);
+            border-color: #da9f5b;
+            box-shadow: 0 20px 45px rgba(51, 33, 29, 0.16);
+        }
+
+        .flight-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(218, 159, 91, 0.12);
+            color: #ba7f3b;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .flight-item-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .flight-item-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0e6dd;
+            color: #4a3834;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .flight-item-list li i {
+            color: #da9f5b;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+
+        .flight-price-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid rgba(218, 159, 91, 0.2);
+        }
+
+        .flight-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #33211d;
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="index.html" class="navbar-brand px-lg-4 m-0 d-flex align-items-center">
+                <i class="fa fa-coffee text-primary mr-2" style="font-size: 1.75rem;"></i>
+                <h2 class="m-0 font-weight-bold text-uppercase text-white" style="font-size: 1.6rem; letter-spacing: 2px;">BREW HAVEN</h2>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="about.html" class="nav-item nav-link">About</a>
+                    <a href="service.html" class="nav-item nav-link">Service</a>
+                    <a href="menu.html" class="nav-item nav-link active">Menu</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu text-capitalize">
+                            <a href="reservation.html" class="dropdown-item">Reservation</a>
+                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                        </div>
+                    </div>
+                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header mb-5 position-relative overlay-bottom">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase">Menu</h1>
+            <div class="d-inline-flex mb-lg-5">
+                <p class="m-0 text-white"><a class="text-white" href="index.html">Home</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Menu</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Menu Start -->
+    <div class="container-fluid pt-5">
+        <div class="container">
+            <div class="section-title">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Menu & Pricing</h4>
+                <h1 class="display-4">Crafted Cafe Menu</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h1 class="mb-5">Hot Coffee & Espresso</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Espresso & Americano">
+                            <h5 class="menu-price">$4.50</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4>Espresso & Americano</h4>
+                            <p class="m-0">Rich double shot of single-origin Ethiopian beans with velvety crema and hot purified water.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Cappuccino & Vanilla Latte">
+                            <h5 class="menu-price">$5.50</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4>Cappuccino & Vanilla Latte</h4>
+                            <p class="m-0">Creamy steamed organic milk poured over double espresso with dark cocoa notes and microfoam art.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Dark Chocolate Mocha & Tea">
+                            <h5 class="menu-price">$6.00</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4>Dark Chocolate Mocha & Tea</h4>
+                            <p class="m-0">Dutch dark cocoa, espresso, steamed milk, and vanilla bean twist alongside loose-leaf Earl Grey tea.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h1 class="mb-5">Cold Brew & Smoothies</h1>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-1.jpg" alt="Nitro Cold Brew Coffee">
+                            <h5 class="menu-price">$5.00</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4>Nitro Cold Brew Coffee</h4>
+                            <p class="m-0">Slow-steeped for 20 hours and nitrogen-infused for a silky cascade and naturally sweet caramel finish.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-2.jpg" alt="Iced Caramel Latte & Smoothie">
+                            <h5 class="menu-price">$6.50</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4>Iced Caramel Latte & Smoothie</h4>
+                            <p class="m-0">Espresso over crushed ice, oat milk, sea salt caramel, and fresh fruit smoothie blends.</p>
+                        </div>
+                    </div>
+                    <div class="row align-items-center mb-5">
+                        <div class="col-4 col-sm-3">
+                            <img class="w-100 rounded-circle mb-3 mb-sm-0" src="img/menu-3.jpg" alt="Artisan Sandwiches & Bakery">
+                            <h5 class="menu-price">$8.50</h5>
+                        </div>
+                        <div class="col-8 col-sm-9">
+                            <h4>Artisan Sandwiches & Bakery</h4>
+                            <p class="m-0">Fresh sourdough paninis, avocado toast, croissants, berry tarts, and gourmet cakes baked daily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Menu End -->
+
+
+    <!-- NEW UNIQUE PREMIUM SECTION 1: Chef's Seasonal Specials Start -->
+    <div class="container-fluid py-5 specials-sec">
+        <div class="container py-4">
+            <div class="section-title text-center mb-5">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Limited Reserve</h4>
+                <h1 class="display-4 text-white">Chef's Seasonal Specials</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="special-card">
+                        <div class="special-img-box">
+                            <img src="img/carousel-1.jpg" alt="Smoked Bourbon Vanilla Nitro Brew">
+                            <span class="special-tag">Barista Special</span>
+                        </div>
+                        <div class="special-body">
+                            <div>
+                                <h3 class="text-white mb-2">Smoked Bourbon Nitro</h3>
+                                <p class="text-white-50 small mb-3">Slow-steeped cold brew aged in oak barrels with Madagascar bourbon vanilla cream and smoked cinnamon pinch.</p>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary">
+                                <div class="special-price">$7.50</div>
+                                <a href="reservation.html" class="btn btn-sm btn-primary font-weight-bold px-3">Order Special</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="special-card">
+                        <div class="special-img-box">
+                            <img src="img/carousel-2.jpg" alt="Truffle Avocado & Poached Egg Toast">
+                            <span class="special-tag">Chef's Pick</span>
+                        </div>
+                        <div class="special-body">
+                            <div>
+                                <h3 class="text-white mb-2">Truffle Avocado Toast</h3>
+                                <p class="text-white-50 small mb-3">Artisan sourdough topped with hass avocado, black truffle oil drizzle, organic poached eggs, and microgreens.</p>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary">
+                                <div class="special-price">$12.50</div>
+                                <a href="reservation.html" class="btn btn-sm btn-primary font-weight-bold px-3">Order Special</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="special-card">
+                        <div class="special-img-box">
+                            <img src="img/bg.jpg" alt="Geisha Grand Reserve Pour-Over">
+                            <span class="special-tag">Rare Reserve</span>
+                        </div>
+                        <div class="special-body">
+                            <div>
+                                <h3 class="text-white mb-2">Geisha Grand Reserve</h3>
+                                <p class="text-white-50 small mb-3">Award-winning Panamanian Geisha pour-over featuring delicate jasmine aromatics, bergamot, and peach notes.</p>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between pt-3 border-top border-secondary">
+                                <div class="special-price">$9.50</div>
+                                <a href="reservation.html" class="btn btn-sm btn-primary font-weight-bold px-3">Order Special</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEW UNIQUE PREMIUM SECTION 1: Chef's Seasonal Specials End -->
+
+
+    <!-- NEW UNIQUE PREMIUM SECTION 2: Tasting Flights & Combos Start -->
+    <div class="container-fluid py-5 flights-sec">
+        <div class="container py-4">
+            <div class="section-title text-center mb-5">
+                <h4 class="text-primary text-uppercase" style="letter-spacing: 5px;">Curated Experiences</h4>
+                <h1 class="display-4">Tasting Flights & Combos</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="flight-card">
+                        <div>
+                            <span class="flight-badge">Breakfast Combo</span>
+                            <h3 class="text-dark mb-2">Morning Sunrise Flight</h3>
+                            <p class="text-muted small">Start your day with our signature morning roast pairing.</p>
+                            <ul class="flight-item-list">
+                                <li><i class="fa fa-coffee"></i> Single-Origin Ethiopian Espresso</li>
+                                <li><i class="fa fa-cookie-bite"></i> Fresh Flaky Almond Croissant</li>
+                                <li><i class="fa fa-glass-cheers"></i> Citrus Lemon Cleanse Shot</li>
+                            </ul>
+                        </div>
+                        <div class="flight-price-wrap">
+                            <div class="flight-price">$14.00</div>
+                            <a href="reservation.html" class="btn btn-outline-primary font-weight-bold px-4">Select Flight</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="flight-card">
+                        <div>
+                            <span class="flight-badge">Popular Duo</span>
+                            <h3 class="text-dark mb-2">Afternoon Energy Trio</h3>
+                            <p class="text-muted small">Balanced mid-day boost crafted for focus and flavor.</p>
+                            <ul class="flight-item-list">
+                                <li><i class="fa fa-glass-martini-alt"></i> Nitrogen Infused Cold Brew</li>
+                                <li><i class="fa fa-bread-slice"></i> Smoked Salmon Sourdough Toast</li>
+                                <li><i class="fa fa-candy-cane"></i> Dark Chocolate Sea Salt Truffle</li>
+                            </ul>
+                        </div>
+                        <div class="flight-price-wrap">
+                            <div class="flight-price">$18.00</div>
+                            <a href="reservation.html" class="btn btn-primary font-weight-bold px-4">Select Flight</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="flight-card">
+                        <div>
+                            <span class="flight-badge">VIP Degustation</span>
+                            <h3 class="text-dark mb-2">Master Roaster Degustation</h3>
+                            <p class="text-muted small">Connoisseur tasting tour of 3 rare pour-over origins.</p>
+                            <ul class="flight-item-list">
+                                <li><i class="fa fa-mug-hot"></i> 3 Micro-Roast Pour-Over Samples</li>
+                                <li><i class="fa fa-cheese"></i> Artisan Cheese & Honey Board</li>
+                                <li><i class="fa fa-notes-medical"></i> Tasting Notes Card & Bean Gift</li>
+                            </ul>
+                        </div>
+                        <div class="flight-price-wrap">
+                            <div class="flight-price">$24.00</div>
+                            <a href="reservation.html" class="btn btn-outline-primary font-weight-bold px-4">Select Flight</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- NEW UNIQUE PREMIUM SECTION 2: Tasting Flights & Combos End -->
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer text-white mt-5 pt-5 px-0 position-relative overlay-top">
+        <div class="row mx-0 pt-5 px-sm-3 px-lg-5 mt-4">
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Get In Touch</h4>
+                <p><i class="fa fa-map-marker-alt mr-2"></i>742 Evergreen Ave, Seattle, WA 98101</p>
+                <p><i class="fa fa-phone-alt mr-2"></i>+1 (555) 382-4283</p>
+                <p class="m-0"><i class="fa fa-envelope mr-2"></i>contact@brewhavencafe.com</p>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
+                <p>Follow Brew Haven Cafe on social media for daily roastery updates, seasonal menu reveals, and community gatherings.</p>
+                <div class="d-flex justify-content-start">
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Open Hours</h4>
+                <div>
+                    <h6 class="text-white text-uppercase">Monday - Friday</h6>
+                    <p>6:30 AM - 9:00 PM</p>
+                    <h6 class="text-white text-uppercase">Saturday - Sunday</h6>
+                    <p>7:30 AM - 10:00 PM</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-5">
+                <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Newsletter</h4>
+                <p>Subscribe for exclusive invitations to private coffee tastings, seasonal discounts, and fresh roasts.</p>
+                <div class="w-100">
+                    <div class="input-group">
+                        <input type="text" class="form-control border-light" style="padding: 25px;" placeholder="Your Email">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary font-weight-bold px-3">Sign Up</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid text-center text-white border-top mt-4 py-4 px-sm-3 px-md-5" style="border-color: rgba(256, 256, 256, .1) !important;">
+            <p class="mb-2 text-white">Copyright &copy; <a class="font-weight-bold" href="#">Brew Haven Cafe</a>. All Rights Reserved.</p>
+            <p class="m-0 text-white">Crafted Coffee. Fresh Food. Memorable Moments.</p>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Custom Coffee Cursor -->
+    <script src="js/cursor.js"></script>
+</body>
+
+</html>
