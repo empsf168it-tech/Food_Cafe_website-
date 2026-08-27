@@ -9658,3 +9658,93 @@ h6,
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
+
+@media (min-width: 992px) {
+  .navbar .nav-item.dropdown:hover > .dropdown-menu,
+  .navbar .nav-item.dropdown.show > .dropdown-menu {
+    display: block !important;
+    margin-top: 0 !important;
+  }
+  .navbar .dropdown-menu {
+    margin-top: 0 !important;
+  }
+}
+
+/* Mobile view text size adjustments for hero section */
+@media (max-width: 768px) {
+  .hero-subtitle-top {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+  }
+  .hero-title-main {
+    font-size: 1.4rem !important;
+    letter-spacing: 3px !important;
+    line-height: 1.25 !important;
+  }
+  .hero-subtitle-bottom {
+    font-size: 0.8rem !important;
+    letter-spacing: 1px !important;
+  }
+  .page-header h1 {
+    font-size: 2rem !important;
+  }
+  .vip-lounge-box {
+    padding: 30px 15px !important;
+    border-radius: 20px !important;
+  }
+  .vip-form-card {
+    padding: 25px 15px !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-subtitle-top {
+    font-size: 0.75rem !important;
+    letter-spacing: 1.5px !important;
+  }
+  .hero-title-main {
+    font-size: 1.15rem !important;
+    letter-spacing: 1.5px !important;
+    line-height: 1.2 !important;
+  }
+  .hero-subtitle-bottom {
+    font-size: 0.7rem !important;
+    letter-spacing: 1px !important;
+  }
+  .page-header h1 {
+    font-size: 1.6rem !important;
+  }
+  .vip-lounge-box {
+    padding: 20px 8px !important;
+    border-radius: 16px !important;
+  }
+  .vip-form-card {
+    padding: 20px 12px !important;
+    border-radius: 12px !important;
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home-service-card,
+  .workshop-card,
+  .distinction-card,
+  .stat-counter-card {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .stat-counter-card {
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 140px !important;
+  }
+  .distinction-card {
+    justify-content: space-between !important;
+  }
+}
+
+
+

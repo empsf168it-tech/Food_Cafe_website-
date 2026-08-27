@@ -185,13 +185,81 @@
             margin-top: 15px;
             padding-top: 15px;
             border-top: 2px solid rgba(218, 159, 91, 0.2);
+            gap: 10px;
         }
 
         .flight-price {
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: #33211d;
             font-family: 'Montserrat', sans-serif;
+            white-space: nowrap;
+        }
+
+        .flight-price-wrap .btn {
+            white-space: nowrap !important;
+            padding: 8px 16px !important;
+            font-size: 0.85rem !important;
+            border-radius: 25px !important;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Responsive CTA Button Arrangement for Mobile, Tablet & 1024px */
+        @media (max-width: 1024px) {
+            .flight-card {
+                padding: 30px 20px !important;
+            }
+            .flight-price {
+                font-size: 1.5rem !important;
+            }
+            .flight-price-wrap {
+                gap: 8px;
+            }
+            .flight-price-wrap .btn {
+                padding: 8px 14px !important;
+                font-size: 0.82rem !important;
+                white-space: nowrap !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .flight-card {
+                padding: 25px 15px !important;
+            }
+            .flight-price-wrap {
+                gap: 6px;
+            }
+            .flight-price {
+                font-size: 1.35rem !important;
+            }
+            .flight-price-wrap .btn {
+                padding: 7px 12px !important;
+                font-size: 0.78rem !important;
+                white-space: nowrap !important;
+            }
+        }
+
+
+        /* Menu Item Price Badge Font Size */
+        .menu-price {
+            position: absolute;
+            margin: 0;
+            top: -5px;
+            right: 10px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #33211d;
+            background: #da9f5b;
+            font-size: 0.82rem !important;
+            font-weight: 700 !important;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -412,7 +480,7 @@
                         </div>
                         <div class="flight-price-wrap">
                             <div class="flight-price">$14.00</div>
-                            <a href="reservation.html" class="btn btn-outline-primary font-weight-bold px-4">Select Flight</a>
+                            <a href="reservation.html" class="btn btn-outline-primary font-weight-bold">Select Flight</a>
                         </div>
                     </div>
                 </div>
@@ -430,7 +498,7 @@
                         </div>
                         <div class="flight-price-wrap">
                             <div class="flight-price">$18.00</div>
-                            <a href="reservation.html" class="btn btn-primary font-weight-bold px-4">Select Flight</a>
+                            <a href="reservation.html" class="btn btn-primary font-weight-bold">Select Flight</a>
                         </div>
                     </div>
                 </div>
@@ -448,8 +516,9 @@
                         </div>
                         <div class="flight-price-wrap">
                             <div class="flight-price">$24.00</div>
-                            <a href="reservation.html" class="btn btn-outline-primary font-weight-bold px-4">Select Flight</a>
+                            <a href="reservation.html" class="btn btn-outline-primary font-weight-bold">Select Flight</a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -471,7 +540,7 @@
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
                 <p>Follow Brew Haven Cafe on social media for daily roastery updates, seasonal menu reveals, and community gatherings.</p>
                 <div class="d-flex justify-content-start">
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -0.125em;"><path d="M12.6 0h2.454l-5.36 6.126L16 16h-4.937l-3.867-5.07-4.425 5.07H0.316l5.733-6.554L0 0h5.063l3.495 4.62L12.6 0zm-0.86 14.54h1.36L4.323 1.394H2.864l8.876 13.146z"/></svg></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>

@@ -101,8 +101,9 @@
         .home-service-card:hover .home-service-badge {
             animation: none;
             transform: scale(1.18) rotate(12deg);
-            background: linear-gradient(135deg, #33211d, #1b1210);
-            color: #da9f5b;
+            background: #ffffff;
+            color: #33211d;
+            box-shadow: 0 8px 25px rgba(51, 33, 29, 0.3), 0 0 20px rgba(218, 159, 91, 0.6);
         }
 
         @keyframes titleGlow {
@@ -360,6 +361,9 @@
             box-shadow: 0 10px 30px rgba(51, 33, 29, 0.06);
             transition: all 0.4s ease;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .distinction-card:hover {
@@ -376,11 +380,18 @@
             color: #ffffff;
             box-shadow: 0 10px 25px rgba(218, 159, 91, 0.3);
             transition: transform 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 140px;
         }
 
         .stat-counter-card:hover {
             transform: scale(1.05);
         }
+
 
         .stat-counter-number {
             font-size: 2.2rem;
@@ -442,6 +453,95 @@
             letter-spacing: 2px;
             opacity: 0;
         }
+
+        /* Mobile view text size adjustments for hero section & card width optimization */
+        @media (max-width: 768px) {
+            @keyframes heroLetterSlideMobile {
+                0%   { opacity: 0; letter-spacing: 8px; }
+                100% { opacity: 1; letter-spacing: 3px; }
+            }
+            .carousel-item.active .hero-title-main {
+                animation: heroLetterSlideMobile 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both,
+                           heroGlowPulse 3s ease-in-out 1.6s infinite;
+            }
+            .hero-subtitle-top {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+            }
+            .hero-title-main {
+                font-size: 1.4rem;
+                letter-spacing: 3px;
+                line-height: 1.25;
+            }
+            .hero-subtitle-bottom {
+                font-size: 0.8rem;
+                letter-spacing: 1px;
+            }
+            .vip-lounge-box {
+                padding: 30px 15px !important;
+                border-radius: 20px !important;
+            }
+            .vip-form-card {
+                padding: 25px 15px !important;
+                border-radius: 16px !important;
+                width: 100% !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            @keyframes heroLetterSlideSmall {
+                0%   { opacity: 0; letter-spacing: 5px; }
+                100% { opacity: 1; letter-spacing: 1.5px; }
+            }
+            .carousel-item.active .hero-title-main {
+                animation: heroLetterSlideSmall 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s both,
+                           heroGlowPulse 3s ease-in-out 1.6s infinite;
+            }
+            .hero-subtitle-top {
+                font-size: 0.75rem;
+                letter-spacing: 1.5px;
+            }
+            .hero-title-main {
+                font-size: 1.15rem;
+                letter-spacing: 1.5px;
+                line-height: 1.2;
+            }
+            .hero-subtitle-bottom {
+                font-size: 0.7rem;
+                letter-spacing: 1px;
+            }
+            .vip-lounge-box {
+                padding: 20px 8px !important;
+                border-radius: 16px !important;
+            }
+            .vip-form-card {
+                padding: 20px 12px !important;
+                border-radius: 12px !important;
+                width: 100% !important;
+            }
+        }
+
+        /* 1024px card sizing consistency */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .home-service-card,
+            .workshop-card,
+            .distinction-card,
+            .stat-counter-card {
+                height: 100% !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .stat-counter-card {
+                justify-content: center !important;
+                align-items: center !important;
+                min-height: 140px !important;
+            }
+            .distinction-card {
+                justify-content: space-between !important;
+            }
+        }
+
+
     </style>
 </head>
 
@@ -523,11 +623,8 @@
                     <a href="about.html" class="btn btn-secondary font-weight-bold py-2 px-4 mt-2" style="border-radius: 25px; box-shadow: 0 4px 12px rgba(51,33,29,0.15);">Explore Our Story</a>
                 </div>
                 <div class="col-lg-4 py-4 py-lg-0">
-                    <div class="position-relative shadow-lg overflow-hidden" style="border: 4px solid rgba(218, 159, 91, 0.35); border-radius: 24px !important; min-height: 440px;">
-                        <img class="w-100 h-100 position-absolute" src="img/about.png" style="object-fit: cover; top: 0; left: 0;" alt="Brew Haven Roastery Interior">
-                        <div class="position-absolute bottom-0 left-0 right-0 p-3 text-center" style="background: rgba(27, 18, 16, 0.88); backdrop-filter: blur(6px); z-index: 2;">
-                            <span class="text-primary font-weight-bold text-uppercase small" style="letter-spacing: 2px;"><i class="fa fa-award mr-2"></i>Est. 2018 &bull; Seattle, WA</span>
-                        </div>
+                    <div class="position-relative shadow-lg overflow-hidden d-flex align-items-center justify-content-center" style="border: 4px solid rgba(218, 159, 91, 0.35); border-radius: 24px !important; min-height: 440px; background: #ffffff;">
+                        <img class="w-100 h-100 position-absolute" src="img/about.png" style="object-fit: contain; object-position: center; padding: 25px; top: 0; left: 0;" alt="Brew Haven Roastery Interior">
                     </div>
                 </div>
                 <div class="col-lg-4 py-0 py-lg-4">
@@ -556,9 +653,6 @@
                     <div class="home-service-card">
                         <div class="home-service-img-wrap">
                             <img src="img/service-1.jpg" alt="Artisan Express Delivery">
-                            <div class="home-service-badge">
-                                <i class="fa fa-truck"></i>
-                            </div>
                         </div>
                         <div class="home-service-body">
                             <div>
@@ -573,9 +667,6 @@
                     <div class="home-service-card">
                         <div class="home-service-img-wrap">
                             <img src="img/service-2.jpg" alt="Single-Origin Roast">
-                            <div class="home-service-badge">
-                                <i class="fa fa-coffee"></i>
-                            </div>
                         </div>
                         <div class="home-service-body">
                             <div>
@@ -590,9 +681,6 @@
                     <div class="home-service-card">
                         <div class="home-service-img-wrap">
                             <img src="img/service-3.jpg" alt="Master Barista Craft">
-                            <div class="home-service-badge">
-                                <i class="fa fa-award"></i>
-                            </div>
                         </div>
                         <div class="home-service-body">
                             <div>
@@ -607,9 +695,6 @@
                     <div class="home-service-card">
                         <div class="home-service-img-wrap">
                             <img src="img/service-4.jpg" alt="Online Table Booking">
-                            <div class="home-service-badge">
-                                <i class="fa fa-table"></i>
-                            </div>
                         </div>
                         <div class="home-service-body">
                             <div>
@@ -901,7 +986,7 @@
                 <h4 class="text-white text-uppercase mb-4" style="letter-spacing: 3px;">Follow Us</h4>
                 <p>Follow Brew Haven Cafe on social media for daily roastery updates, seasonal menu reveals, and community gatherings.</p>
                 <div class="d-flex justify-content-start">
-                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#" aria-label="X"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="vertical-align: -0.125em;"><path d="M12.6 0h2.454l-5.36 6.126L16 16h-4.937l-3.867-5.07-4.425 5.07H0.316l5.733-6.554L0 0h5.063l3.495 4.62L12.6 0zm-0.86 14.54h1.36L4.323 1.394H2.864l8.876 13.146z"/></svg></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a class="btn btn-lg btn-outline-light btn-lg-square" href="#"><i class="fab fa-instagram"></i></a>

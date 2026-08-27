@@ -5,13 +5,13 @@
     $(document).ready(function () {
         function toggleNavbarMethod() {
             if ($(window).width() > 992) {
-                $('.navbar .dropdown').on('mouseover', function () {
-                    $('.dropdown-toggle', this).trigger('click');
-                }).on('mouseout', function () {
-                    $('.dropdown-toggle', this).trigger('click').blur();
+                $('.navbar .dropdown').on('mouseenter', function () {
+                    $(this).addClass('show').find('.dropdown-menu').addClass('show');
+                }).on('mouseleave', function () {
+                    $(this).removeClass('show').find('.dropdown-menu').removeClass('show');
                 });
             } else {
-                $('.navbar .dropdown').off('mouseover').off('mouseout');
+                $('.navbar .dropdown').off('mouseenter').off('mouseleave');
             }
         }
         toggleNavbarMethod();
@@ -58,7 +58,7 @@
                 items:1
             },
             768:{
-                items:2
+                items:1
             },
             992:{
                 items:3
